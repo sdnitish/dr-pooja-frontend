@@ -1,0 +1,175 @@
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaSearch,
+  FaFacebookF,
+  FaTwitter,
+  FaYoutube,
+  FaPinterestP,
+  FaRegCalendarAlt,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <>
+      {/* TOP BAR */}
+      <div className="w-full bg-white shadow-sm py-1">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
+
+          {/* LOGO */}
+          <div className="flex items-center gap-4">
+            {/* Hamburger visible only on small screens */}
+            <button
+              aria-label="Open menu"
+              className="md:hidden text-2xl text-gray-700"
+              onClick={() => setMobileOpen(true)}
+            >
+              <FaBars />
+            </button>
+
+            <Link href="/">
+              <img src="/logo.png" alt="Logo" className="max-h-20" />
+            </Link>
+          </div>
+
+          {/* INFO ITEMS (hidden on small screens) */}
+          <div className="hidden md:flex items-center gap-8">
+
+            {/* Phone */}
+            <div className="flex items-center gap-2">
+              <FaPhoneAlt className="text-[#8a56f0] text-3xl" />
+              <div>
+                <p className="text-[10px] text-gray-500 mb-0">Call Any Time</p>
+                <Link href={'/'} className="font-semibold">+90 456 789 758</Link>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center gap-2 border-l pl-6">
+              <FaEnvelope className="text-[#8a56f0] text-3xl" />
+              <div>
+                <p className="text-[10px] text-gray-500 mb-0">Email</p>
+                <Link href={'/'} className="font-semibold">example@domain.com</Link>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Appointment Button (hidden on small screens) */}
+          <Link href={'/'} className="hidden md:flex gap-1.5 items-center bg-[#8a56f0] text-white px-6 py-3 rounded-full font-semibold">
+            APPOINTMENTS <FaRegCalendarAlt className="text-white text-sm" />
+          </Link>
+        </div>
+      </div>
+
+      {/* MAIN MENU BAR */}
+      <div className="w-full bg-[#06C5E0] py-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
+
+          {/* DESKTOP MENU */}
+          <ul className="hidden md:flex items-center gap-8 text-white font-medium">
+            <li className="cursor-pointer hover:text-gray-100">Home</li>
+            <li className="cursor-pointer hover:text-gray-100">About</li>
+            <li className="cursor-pointer hover:text-gray-100">Services</li>
+            <li className="cursor-pointer hover:text-gray-100">Blog</li>
+            <li className="cursor-pointer hover:text-gray-100">Contact</li>
+          </ul>
+
+          {/* RIGHT ICONS */}
+          <div className="flex items-center gap-4 text-white">
+            {/* Search icon hidden on very small screens (optional) */}
+            {/* <div className="hidden sm:flex items-center">
+              <div className="bg-white text-[#8a56f0] p-2 rounded-full cursor-pointer shadow">
+                <FaSearch />
+              </div>
+            </div> */}
+
+            <div className="hidden md:flex items-center gap-4">
+              <FaFacebookF className="cursor-pointer hover:opacity-80" />
+              <FaTwitter className="cursor-pointer hover:opacity-80" />
+              <FaYoutube className="cursor-pointer hover:opacity-80" />
+              <FaPinterestP className="cursor-pointer hover:opacity-80" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE OFF-CANVAS MENU + OVERLAY */}
+      {/* Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setMobileOpen(false)}
+        aria-hidden={!mobileOpen}
+      />
+
+      {/* Drawer (slides left -> right) */}
+      <aside
+        className={`fixed top-0 left-0 h-full w-72 sm:w-80 bg-white z-50 transform transition-transform duration-300 ease-out
+          ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}
+        `}
+        aria-hidden={!mobileOpen}
+      >
+        <div className="flex items-center justify-between p-4 border-b">
+          <Link href="/">
+            <img src="/logo.png" alt="Logo" className="h-12" />
+          </Link>
+          <button
+            aria-label="Close menu"
+            onClick={() => setMobileOpen(false)}
+            className="text-2xl text-gray-700"
+          >
+            <FaTimes />
+          </button>
+        </div>
+
+        <nav className="p-6">
+          <ul className="flex flex-col gap-4 text-gray-800 font-medium">
+            <li>
+              <Link href="/" onClick={() => setMobileOpen(false)} className="block py-2">Home</Link>
+            </li>
+            <li>
+              <Link href="/about" onClick={() => setMobileOpen(false)} className="block py-2">About</Link>
+            </li>
+            <li>
+              <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-2">Services</Link>
+            </li>
+            <li>
+              <Link href="/blog" onClick={() => setMobileOpen(false)} className="block py-2">Blog</Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={() => setMobileOpen(false)} className="block py-2">Contact</Link>
+            </li>
+          </ul>
+
+          <div className="mt-6">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="inline-flex items-center gap-2 bg-[#8a56f0] text-white px-4 py-2 rounded-full">
+              APPOINTMENTS <FaRegCalendarAlt />
+            </Link>
+          </div>
+
+          <div className="mt-8 border-t pt-6 flex items-center gap-4 text-gray-600">
+            <FaPhoneAlt className="text-xl text-[#8a56f0]" />
+            <div>
+              <p className="text-xs text-gray-500">Call Any Time</p>
+              <p className="font-semibold">+90 456 789 758</p>
+            </div>
+          </div>
+
+          <div className="mt-4 flex gap-4 text-gray-600">
+            <FaFacebookF />
+            <FaTwitter />
+            <FaYoutube />
+            <FaPinterestP />
+          </div>
+        </nav>
+      </aside>
+    </>
+  );
+}
