@@ -1,18 +1,15 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import { HiOutlineMailOpen } from "react-icons/hi";
 import {
   FaPhoneAlt,
-  FaEnvelope,
   FaSearch,
-  FaFacebookF,
-  FaTwitter,
-  FaYoutube,
-  FaPinterestP,
   FaRegCalendarAlt,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import SocialIcon from "../cards/SocialIcon";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -53,7 +50,7 @@ export default function Navbar() {
 
             {/* Email */}
             <div className="flex items-center gap-2 border-l pl-6">
-              <FaEnvelope className="text-[#8a56f0] text-3xl" />
+              <HiOutlineMailOpen className="text-[#8a56f0] text-4xl" />
               <div>
                 <p className="text-[10px] text-gray-500 mb-0">Email</p>
                 <Link href={'/'} className="font-semibold">example@domain.com</Link>
@@ -92,10 +89,7 @@ export default function Navbar() {
             </div> */}
 
             <div className="hidden md:flex items-center gap-4">
-              <FaFacebookF className="cursor-pointer hover:opacity-80" />
-              <FaTwitter className="cursor-pointer hover:opacity-80" />
-              <FaYoutube className="cursor-pointer hover:opacity-80" />
-              <FaPinterestP className="cursor-pointer hover:opacity-80" />
+              <SocialIcon />
             </div>
           </div>
         </div>
@@ -163,10 +157,7 @@ export default function Navbar() {
           </div>
 
           <div className="mt-4 flex gap-4 text-gray-600">
-            <FaFacebookF />
-            <FaTwitter />
-            <FaYoutube />
-            <FaPinterestP />
+            <SocialIcon />
           </div>
         </nav>
       </aside>
