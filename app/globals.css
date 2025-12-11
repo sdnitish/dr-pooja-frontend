@@ -1,1 +1,179 @@
 @import "tailwindcss";
+
+body {}
+
+p {
+  line-height: 30px;
+}
+
+img {
+  max-width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+.img {
+  overflow: hidden;
+}
+
+.img:hover img {
+  transform: scale(1.1);
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.foot_socal svg {
+  color: #fff;
+  font-size: 23px;
+
+}
+.foot_socal a{
+  color: #000;
+}
+.you_tube {
+  transform: translate(-50%, -50%);
+}
+
+.you_tube::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: -1;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+  border: 2px solid #fff;
+  animation: ripple 4s linear infinite;
+}
+
+.you_tube:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: -1;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+  border: 2px solid #fff;
+  animation: ripple-md 5s linear infinite;
+}
+
+.you_tube a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: -1;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+  border: 2px solid #fff;
+  animation: ripple-sm 5s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-md {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-sm {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-xs {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
