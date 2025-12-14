@@ -1,13 +1,12 @@
+// models/Blog.js
 import mongoose from "mongoose";
 
-const ServiceSchema = new mongoose.Schema(
+const BlogSchema = new mongoose.Schema(
   {
     name: String,
     slug: String,
     icon: String,
     img: String,
-    pdf: String,
-    price: String,
     shortDescription: String,
     description: String,
     extraDescription: String,
@@ -19,4 +18,7 @@ const ServiceSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.Service || mongoose.model("Service", ServiceSchema);
+// ensure we reuse existing compiled model to avoid OverwriteModelError in dev
+const Blog = mongoose.models.Blog || mongoose.model("Blog", BlogSchema);
+
+export default Blog;

@@ -1,6 +1,11 @@
-import Image from "next/image";
-import Hero from "./components/sections/Hero";
 import Navbar from "./components/includes/Navbar";
+import Hero from "./components/sections/Hero";
+import HomeAbout from "./components/sections/HomeAbout";
+import Services from "./components/sections/Services";
+import Clients from "./components/sections/Clients";
+import YouTube from "./components/sections/YouTube";
+import Blog from "./components/sections/Blog";
+import WhyChoose from "./components/sections/WhyChoose";
 import Footer from "./components/includes/Footer";
 
 export default function Home() {
@@ -8,6 +13,12 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <HomeAbout />
+      <Services />
+      <WhyChoose />
+      <YouTube />
+      <Blog />
+      <Clients />
       <Footer />
     </>
   );

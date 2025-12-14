@@ -1,29 +1,28 @@
-// app/api/admin/services/route.js
 import { connectDB } from "@/lib/db";
-import Service from "@/models/Service";
+import BlogImport from "@/models/Blog";
 import slugify from "slugify";
-import { withAuth } from "@/lib/authMiddleware"; // optional — ensure this path exists or remove this import
+import { withAuth } from "@/lib/authMiddleware";
 
-// -------------------------------
-// Internal handlers (avoid naming collisions with exported GET/POST)
-// -------------------------------
+// handle possible wrapped import shapes (Turbopack/ESM interop)
+const Blog = BlogImport && BlogImport.default ? BlogImport.default : BlogImport;
+
 
 async function getHandler(req) {
   await connectDB();
   try {
-    const services = await Service.find().sort({ createdAt: -1 }).lean();
-    if (!services || services.length === 0) {
+    const blogs = await Blog.find().sort({ createdAt: -1 }).lean();
+    if (!blogs || blogs.length === 0) {
       return new Response(
         JSON.stringify({ status: false, message: "No Data Found." }),
         { status: 200, headers: { "Content-Type": "application/json" } }
       );
     }
-    return new Response(JSON.stringify({ status: true, data: services }), {
+    return new Response(JSON.stringify({ status: true, data: blogs }), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
-    console.error("[admin/services.GET] error:", err);
+    console.error("[admin/blogs.GET] error:", err);
     return new Response(
       JSON.stringify({ status: false, message: "Server error" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
@@ -32,7 +31,7 @@ async function getHandler(req) {
 }
 
 /**
- * POST - create or update service
+ * POST - create or update blog
  * Expect JSON body:
  * { id?: string, name, slug?, icon, img, pdf, price, shortDescription, description,
  *   extraDescription, metaTitle, metaDescription, metaKeywords, isActive }
@@ -52,25 +51,27 @@ async function postHandler(req) {
       );
     }
 
-    // Generate slug automatically
+    // Generate slug from name
     const generatedSlug = slugify(body.name, { lower: true, strict: true });
 
-    // UPDATE ----------------------------------------------------
+    // ---------------------------------------------------------
+    // UPDATE BLOG
+    // ---------------------------------------------------------
     if (body.id) {
-      const existing = await Service.findById(body.id);
+      const existing = await Blog.findById(body.id);
       if (!existing) {
         return new Response(
-          JSON.stringify({ status: false, message: "Service not found" }),
+          JSON.stringify({ status: false, message: "Blog not found" }),
           { status: 404, headers: { "Content-Type": "application/json" } }
         );
       }
 
-      // If name changed → regenerate slug
+      // Check if name is being updated
       if (body.name !== existing.name) {
         body.slug = generatedSlug;
 
-        // Check slug uniqueness
-        const slugExists = await Service.findOne({
+        // slug uniqueness check
+        const slugExists = await Blog.findOne({
           slug: body.slug,
           _id: { $ne: body.id },
         });
@@ -78,75 +79,75 @@ async function postHandler(req) {
           return new Response(
             JSON.stringify({
               status: false,
-              message: "Slug already exists. Try another name.",
+              message: "Slug already exists, choose a different name",
+            }),
+            { status: 400 }
+          );
+        }
+
+        // name uniqueness check
+        const nameExists = await Blog.findOne({
+          name: body.name,
+          _id: { $ne: body.id },
+        });
+        if (nameExists) {
+          return new Response(
+            JSON.stringify({
+              status: false,
+              message: "Name already exists",
             }),
             { status: 400 }
           );
         }
       }
 
-      // Check name uniqueness
-      const nameExists = await Service.findOne({
-        name: body.name,
-        _id: { $ne: body.id },
-      });
-      if (nameExists) {
-        return new Response(
-          JSON.stringify({
-            status: false,
-            message: "Name already exists.",
-          }),
-          { status: 400 }
-        );
-      }
-
-      await Service.updateOne({ _id: body.id }, { $set: body });
-      const updated = await Service.findById(body.id).lean();
+      await Blog.updateOne({ _id: body.id }, { $set: body });
+      const updated = await Blog.findById(body.id).lean();
 
       return new Response(
         JSON.stringify({
           status: true,
-          message: "Service updated successfully",
-          service: updated,
+          message: "Blog updated successfully",
+          blog: updated,
         }),
         { status: 200 }
       );
     }
 
-    // CREATE ----------------------------------------------------
+    // ---------------------------------------------------------
+    // CREATE BLOG
+    // ---------------------------------------------------------
     body.slug = generatedSlug;
 
-    // Check duplicate name
-    const nameExists = await Service.findOne({ name: body.name });
+    // name duplicate check
+    const nameExists = await Blog.findOne({ name: body.name });
     if (nameExists) {
       return new Response(
         JSON.stringify({
           status: false,
-          message: "Name already exists.",
+          message: "Name already exists",
         }),
         { status: 400 }
       );
     }
 
-    // Check duplicate slug
-    const slugExists = await Service.findOne({ slug: body.slug });
+    // slug duplicate check
+    const slugExists = await Blog.findOne({ slug: body.slug });
     if (slugExists) {
       return new Response(
         JSON.stringify({
           status: false,
-          message: "Slug already exists.",
+          message: "Slug already exists",
         }),
         { status: 400 }
       );
     }
 
-    const newService = new Service({
+    const newBlog = new Blog({
       name: body.name,
       slug: body.slug,
       icon: body.icon || "",
       img: body.img || "",
-      pdf: body.pdf || "",
-      price: body.price || "",
       shortDescription: body.shortDescription || "",
       description: body.description || "",
       extraDescription: body.extraDescription || "",
@@ -156,18 +157,18 @@ async function postHandler(req) {
       isActive: typeof body.isActive === "boolean" ? body.isActive : true,
     });
 
-    await newService.save();
+    await newBlog.save();
 
     return new Response(
       JSON.stringify({
         status: true,
-        message: "Service created successfully",
-        service: newService,
+        message: "Blog created successfully",
+        blog: newBlog,
       }),
       { status: 201 }
     );
   } catch (err) {
-    console.error("[admin/services.POST] error:", err);
+    console.error("[admin/blogs.POST] error:", err);
 
     return new Response(
       JSON.stringify({ status: false, message: "Server error" }),

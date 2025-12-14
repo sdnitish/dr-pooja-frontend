@@ -1,4 +1,3 @@
-// app/api/front/services/route.js
 import { connectDB } from "@/lib/db";
 import Service from "@/models/Service";
 

@@ -1,17 +1,17 @@
 import { connectDB } from "@/lib/db";
-import Service from "@/models/Service";
+import Blog from "@/models/Blog";
 
 export async function GET(req, ctx) {
   await connectDB();
   try {
     const { slug } = ctx.params;
-    const service = await Service.findOne({ isActive: true, slug }).lean();
-    if (!service) {
+    const blog = await Blog.findOne({ isActive: true, slug }).lean();
+    if (!blog) {
       return new Response(JSON.stringify({ status: false, message: "No Data Found." }), { status: 200 });
     }
-    return new Response(JSON.stringify({ status: true, service }), { status: 200 });
+    return new Response(JSON.stringify({ status: true, blog }), { status: 200 });
   } catch (err) {
-    console.error("[front/service.GET] error:", err);
+    console.error("[front/blog.GET] error:", err);
     return new Response(JSON.stringify({ status: false, message: "Server error" }), { status: 500 });
   }
 }
