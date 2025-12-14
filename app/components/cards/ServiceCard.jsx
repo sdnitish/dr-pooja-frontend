@@ -7,16 +7,16 @@ const ServiceCard = ({ item }) => {
 
     return (
         <>
-            <div className="border-2 bg-white bg-fixed border-[#8956f050] p-4 rounded-lg text-center m-4 mb-6 pb-9 relative hover:border-[#8956f0] hover:shadow-lg transition-all duration-300">
+            <div className="border-2 bg-white bg-fixed border-[#8956f050] p-4 rounded-lg  m-4 mb-6 pb-9 relative hover:border-[#8956f0] hover:shadow-lg transition-all duration-300">
                 <div className="img">
-                    <img className='w-full rounded-xl' src={item.image} alt="About" />
+                    <img className='w-full rounded-xl' src={'/img/img-1.jpg'} alt="About" />
                 </div>
                 <div className="px-6">
                     <Link href={`/`}>
-                        <span className='text-2xl font-semibold text-[#8956f0] block my-4'>{item.title}</span>
+                        <span className='text-[16px] md:text-[21px] line-clamp-1 font-semibold text-[#8956f0] block my-3'>{item.name}</span>
                     </Link>
-                    <div className="pera">
-                        <p className='text-[#888c92]'>{item.pera}</p>
+                    <div className="pera line-clamp-4">
+                        <p className='text-[#888c92]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, delectus, maxime exercitationem animi tempore suscipit ea earum alias fuga veniam dolor accusantium nisi eum architecto. Nulla ratione quod reiciendis!</p>
                     </div>
                     <div className="">
                         <Link href={`/`} className='text-[#fff] bg-[#8956f0] p-3 rounded-full absolute bottom-[-20px] left-[45%] font-semibold mt-4 inline-block hover:bg-[#2ea358]'><HiArrowRight /></Link>

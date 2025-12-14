@@ -1,18 +1,30 @@
 import React from 'react'
 import {
   FaFacebookF,
-  FaTwitter,
   FaYoutube,
   FaPinterestP,
+  FaInstagram
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
-const SocialIcon = () => {
+const SocialIcon = ({ siteInfo }) => {
     return (
         <>
-            <FaFacebookF className="cursor-pointer hover:opacity-80" />
-            <FaTwitter className="cursor-pointer hover:opacity-80" />
-            <FaYoutube className="cursor-pointer hover:opacity-80" />
-            <FaPinterestP className="cursor-pointer hover:opacity-80" />
+            <a href={siteInfo?.facebook} target="_blank" rel="noopener noreferrer">
+                <FaFacebookF className="cursor-pointer hover:opacity-80" />
+            </a>
+            <a href={siteInfo?.instagram} target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="cursor-pointer hover:opacity-80" />
+            </a>
+            <a href={siteInfo?.twitter} target="_blank" rel="noopener noreferrer">
+                <FaXTwitter className="cursor-pointer hover:opacity-80" />
+            </a>
+            <a href={siteInfo?.youtube} target="_blank" rel="noopener noreferrer">
+                <FaYoutube className="cursor-pointer hover:opacity-80" />
+            </a>
+            <a href={siteInfo?.pinterest} target="_blank" rel="noopener noreferrer">
+                <FaPinterestP className="cursor-pointer hover:opacity-80" />
+            </a>
         </>
     )
 }

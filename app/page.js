@@ -7,19 +7,30 @@ import YouTube from "./components/sections/YouTube";
 import Blog from "./components/sections/Blog";
 import WhyChoose from "./components/sections/WhyChoose";
 import Footer from "./components/includes/Footer";
+import { ContactUs } from "./components/sections/ContactUs";
+import { getSiteInfo } from "@/lib/api/siteInfo.api";
+import { getServices } from "@/lib/api/services.api";
 
-export default function Home() {
+export const metadata = {
+  title: "Dr. Pooja Mittal - Home",
+  description: "Welcome to Dr. Pooja Mittal's official website. Explore our services, read our blog, and get in touch for appointments.",
+};
+
+export default async function Home() {
+  const siteInfo = await getSiteInfo();
+  const services = await getServices();
   return (
     <>
-      <Navbar />
+      <Navbar siteInfo={siteInfo?.websiteInfo} />
       <Hero />
       <HomeAbout />
-      <Services />
-      <WhyChoose />
-      <YouTube />
+      <Services services={services?.data} />
+      <WhyChoose  />
+      <YouTube siteInfo={siteInfo?.websiteInfo} />
+      <ContactUs />
       <Blog />
       <Clients />
-      <Footer />
+      <Footer siteInfo={siteInfo?.websiteInfo} />
     </>
   );
 }

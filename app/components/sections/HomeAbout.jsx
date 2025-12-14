@@ -5,24 +5,27 @@ export default function HomeAbout() {
     <>
         <section className="home-about my-4 md:my-[80px]">
             <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="relative">
-                         <img src="/img/about.png" alt="About" />
+                         <img src="/img/about.jpeg" alt="About" />
                          <div className="absolute right-0 bottom-[17%] bg-[#8a56f0] py-3 px-6 text-center rounded-2xl">
-                            <span className="block text-5xl md:text-6xl font-bold  text-white">+30</span>
+                            <span className="block text-5xl md:text-6xl font-bold  text-white">20+</span>
                             <p className="text-white">Years of Experience</p>
                          </div>
                     </div>
                     <div>
-                        <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">About Me</span>
-                        <h1 className="text-3xl md:text-4xl font-semibold mb-4">About Dr. Pooja Tiwari</h1>
-                        <p className="mb-4">Dr. Pooja Tiwari is a renowned psychologist and therapist with over a decade of experience in helping individuals overcome mental health challenges. She specializes in cognitive-behavioral therapy and has a passion for empowering her clients to lead fulfilling lives.</p>
-                        <p className="mb-4">With a compassionate approach and evidence-based techniques, Dr. Tiwari has successfully treated a wide range of issues including anxiety, depression, stress management, and relationship problems. Her dedication to her clients' well-being has earned her a reputation as one of the leading mental health professionals in the field.</p>
-                        <p>Outside of her clinical practice, Dr. Tiwari is also an advocate for mental health awareness and regularly conducts workshops and seminars to educate the public on the importance of mental wellness.</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum minima velit culpa, fugiat adipisci, maxime eligendi possimus voluptas quod commodi consectetur qui at inventore nobis ducimus aliquid minus dolor doloribus.</p>
+                        <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">Dr Pooja Mittal</span>
+                        <h1 className="text-2xl md:text-3xl font-semibold mb-4">MBBS, MD (Obstetrics and Gynaecology)</h1>
+                        <span className='block text-xl my-1'>FMAS ( Fellowship in Minimal Access Surgery)</span>
+                        <span className='block my-1'><b>Registration No.</b> HMC 7323</span>
+                        <span className='block text-1xl font-semibold my-2'>Presently working at Medanta, The Medicity, Gurgaon </span>
+                        <p className="mb-4">Dr Pooja Mittal is a one of the finest and most sought after Obstetrician and Gynecologist in Delhi-NCR. With over 20 years of dedicated experience,  Dr Mittal is  renowned for her extensive experience in managing high risk pregnancies and performing complex gynecological surgeries such as advanced Laparoscopic surgeries, Hysteroscopies, surgeries for female genital prolapse, fibroids , endometriosis and ovarian cysts. Her services also include menopausal health, adolescent problems and fertility issues. </p>
+
+                        <p className="mb-4">At present , Dr Pooja Mittal is working as a senior consultant at Medanta, The Medicity, Gurgaon. </p>
+{/* 
                         <div className='mt-5'>
                             <a href="/about" className="inline-block mt-4 px-8 py-3 bg-primary text-white font-medium rounded-full bg-[#8a56f0] hover:bg-[#2ea358] transition">Read More</a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

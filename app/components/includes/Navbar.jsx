@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import SocialIcon from "../cards/SocialIcon";
 
-export default function Navbar() {
+export default function Navbar({ siteInfo }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -32,7 +32,7 @@ export default function Navbar() {
             </button>
 
             <Link href="/">
-              <img src="/logo.png" alt="Logo" className="max-h-20" />
+              <img src={siteInfo?.logo} alt={siteInfo?.name} title={siteInfo?.name} className="max-h-20" />
             </Link>
           </div>
 
@@ -43,8 +43,8 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8a56f0] text-3xl" />
               <div>
-                <p className="text-[10px] text-gray-500 mb-0">Call Any Time</p>
-                <Link href={'/'} className="font-semibold">+90 456 789 758</Link>
+                <span className="block text-[10px] text-gray-500 mb-0">Call Any Time</span>
+                <Link href={`tel:${siteInfo?.primaryPhone}`} className="font-semibold">{siteInfo?.primaryPhone}</Link>
               </div>
             </div>
 
@@ -52,8 +52,8 @@ export default function Navbar() {
             <div className="flex items-center gap-2 border-l pl-6">
               <HiOutlineMailOpen className="text-[#8a56f0] text-4xl" />
               <div>
-                <p className="text-[10px] text-gray-500 mb-0">Email</p>
-                <Link href={'/'} className="font-semibold">example@domain.com</Link>
+                <span className="block text-[10px] text-gray-500 mb-0">Email</span>
+                <Link href={`mailto:${siteInfo?.primaryEmail}`} className="font-semibold">{siteInfo?.primaryEmail}</Link>
               </div>
             </div>
 
@@ -89,7 +89,7 @@ export default function Navbar() {
             </div> */}
 
             <div className="hidden md:flex items-center gap-4">
-              <SocialIcon />
+               <SocialIcon siteInfo={siteInfo} />
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between p-4 border-b">
           <Link href="/">
-            <img src="/logo.png" alt="Logo" className="h-12" />
+            <img src={siteInfo?.logo} alt={siteInfo?.name} title={siteInfo?.name} className="h-12" />
           </Link>
           <button
             aria-label="Close menu"
@@ -152,12 +152,12 @@ export default function Navbar() {
             <FaPhoneAlt className="text-xl text-[#8a56f0]" />
             <div>
               <p className="text-xs text-gray-500">Call Any Time</p>
-              <p className="font-semibold">+90 456 789 758</p>
+              <Link href={`tel:${siteInfo?.primaryPhone}`} className="font-semibold">{siteInfo?.primaryPhone}</Link>
             </div>
           </div>
 
           <div className="mt-4 flex gap-4 text-gray-600">
-            <SocialIcon />
+            <SocialIcon siteInfo={siteInfo} />
           </div>
         </nav>
       </aside>

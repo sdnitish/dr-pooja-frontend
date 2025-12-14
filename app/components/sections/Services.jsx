@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import ServiceCard from '../cards/ServiceCard';
 
-const Services = () => {
+const Services = ({ services }) => {
     const carddata = [
         {
             image: "/img/img-1.jpg",
@@ -59,7 +59,7 @@ const Services = () => {
                                 loop={true}
                             >
 
-                                {carddata.map((item, index) => (
+                                { services.map((item, index) => (
                                     <SwiperSlide>
                                         <ServiceCard key={index} item={item} />
                                     </SwiperSlide>
