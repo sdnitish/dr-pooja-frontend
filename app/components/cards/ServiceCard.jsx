@@ -9,11 +9,11 @@ const ServiceCard = ({ item }) => {
         <>
             <div className="border-2 bg-white bg-fixed border-[#8956f050] p-4 rounded-lg  m-4 mb-6 pb-9 relative hover:border-[#8956f0] hover:shadow-lg transition-all duration-300">
                 <div className="img">
-                    <img className='w-full rounded-xl' src={'/img/img-1.jpg'} alt="About" />
+                    <img className='w-full rounded-xl' src={item.image??'/img/img-1.jpg'} alt="About" />
                 </div>
                 <div className="px-6">
                     <Link href={`/`}>
-                        <span className='text-[16px] md:text-[21px] line-clamp-1 font-semibold text-[#8956f0] block my-3'>{item.name}</span>
+                        <span className='text-[16px] md:text-[19px] line-clamp-1! font-semibold text-[#8956f0] block my-3'>{item.name}</span>
                     </Link>
                     <div className="pera line-clamp-4">
                         <p className='text-[#888c92]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, delectus, maxime exercitationem animi tempore suscipit ea earum alias fuga veniam dolor accusantium nisi eum architecto. Nulla ratione quod reiciendis!</p>

@@ -15,7 +15,7 @@ export default function BlogCard({ item }) {
                     <img className='w-full rounded-xl' src={item.image} alt="About" />
                 </div>
                 <div className="p-8">
-                    <span className='flex items-center gap-2 text-[#838383]'> <FaUser />Acupressure</span>
+                    <span className='flex items-center gap-2 text-[#838383]'> <FaUser />Dr Pooja Mittal</span>
                     <Link href={`/`}>
                         <span className='text-xl font-semibold text-[#000] block my-4'>{item.title}</span>
                     </Link>

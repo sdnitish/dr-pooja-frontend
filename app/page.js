@@ -10,6 +10,7 @@ import Footer from "./components/includes/Footer";
 import { ContactUs } from "./components/sections/ContactUs";
 import { getSiteInfo } from "@/lib/api/siteInfo.api";
 import { getServices } from "@/lib/api/services.api";
+import PageLayout from "./PageLayout";
 
 export const metadata = {
   title: "Dr. Pooja Mittal - Home",
@@ -21,16 +22,16 @@ export default async function Home() {
   const services = await getServices();
   return (
     <>
-      <Navbar siteInfo={siteInfo?.websiteInfo} />
-      <Hero />
-      <HomeAbout />
-      <Services services={services?.data} />
-      <WhyChoose  />
-      <YouTube siteInfo={siteInfo?.websiteInfo} />
-      <ContactUs />
-      <Blog />
-      <Clients />
-      <Footer siteInfo={siteInfo?.websiteInfo} />
+      <PageLayout>
+        <Hero />
+        <HomeAbout />
+        <Services services={services?.data} />
+        <WhyChoose />
+        <YouTube siteInfo={siteInfo?.websiteInfo} />
+        <ContactUs />
+        <Blog />
+        <Clients />
+      </PageLayout>
     </>
   );
 }

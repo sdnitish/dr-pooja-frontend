@@ -7,32 +7,6 @@ import 'swiper/css/effect-fade';
 import ServiceCard from '../cards/ServiceCard';
 
 const Services = ({ services }) => {
-    const carddata = [
-        {
-            image: "/img/img-1.jpg",
-            title: "Hematology and Super Cool",
-            slug: "slig-1",
-            pera: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, delectus, maxime exercitationem animi tempore suscipit ea earum alias fuga veniam dolor accusantium nisi eum architecto. Nulla ratione quod reiciendis!"
-        },
-        {
-            image: "/img/img-1.jpg",
-            title: "Hematology and Super Cool",
-            slug: "slig-1",
-            pera: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, delectus, maxime exercitationem animi tempore suscipit ea earum alias fuga veniam dolor accusantium nisi eum architecto. Nulla ratione quod reiciendis!"
-        },
-        {
-            image: "/img/img-1.jpg",
-            title: "Hematology and Super Cool",
-            slug: "slig-1",
-            pera: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, delectus, maxime exercitationem animi tempore suscipit ea earum alias fuga veniam dolor accusantium nisi eum architecto. Nulla ratione quod reiciendis!"
-        },
-        {
-            image: "/img/img-1.jpg",
-            title: "Hematology and Super Cool",
-            slug: "slig-1",
-            pera: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic, delectus, maxime exercitationem animi tempore suscipit ea earum alias fuga veniam dolor accusantium nisi eum architecto. Nulla ratione quod reiciendis!"
-        },
-    ]
     return (
         <>
             <section className="services bg-[url('/img/bg.jpg')] bg-no-repeat bg-center bg-cover py-10 md:py-20">

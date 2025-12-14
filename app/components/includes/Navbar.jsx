@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import SocialIcon from "../cards/SocialIcon";
 
-export default function Navbar({ siteInfo }) {
+export default function Navbar({ siteInfo , services}) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -67,16 +67,25 @@ export default function Navbar({ siteInfo }) {
       </div>
 
       {/* MAIN MENU BAR */}
-      <div className="w-full bg-[#06C5E0] py-4">
+      <div className="w-full bg-[#06C5E0] ">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
 
           {/* DESKTOP MENU */}
           <ul className="hidden md:flex items-center gap-8 text-white font-medium">
-            <li className="cursor-pointer hover:text-gray-100">Home</li>
-            <li className="cursor-pointer hover:text-gray-100">About</li>
-            <li className="cursor-pointer hover:text-gray-100">Services</li>
-            <li className="cursor-pointer hover:text-gray-100">Blog</li>
-            <li className="cursor-pointer hover:text-gray-100">Contact</li>
+            <li className="cursor-pointer hover:text-gray-100 py-4"><Link href="/">Home</Link></li>
+            <li className="cursor-pointer hover:text-gray-100 py-4"><Link href="/about">About</Link></li>
+            <li className="cursor-pointer hover:text-gray-100 py-4 relative group">
+              <Link href="/service">Service</Link>
+              <ul className="absolute top-full left-0 bg-white text-gray-800 shadow-lg max-h-[68vh] overflow-y-auto scale-y-0 origin-top group-hover:scale-y-100 transition duration-300 z-10">
+                {services.map((service, index) => (
+                  <li key={index} className="px-4 py-2 hover:bg-gray-100 whitespace-nowrap border-b border-slate-200">
+                    <Link href={`/service/${service.slug}`}>{service.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li className="cursor-pointer hover:text-gray-100 py-4"><Link href="/blog">Blog</Link></li>
+            <li className="cursor-pointer hover:text-gray-100 py-4"><Link href="/contact">Contact</Link></li>
           </ul>
 
           {/* RIGHT ICONS */}
@@ -132,7 +141,7 @@ export default function Navbar({ siteInfo }) {
               <Link href="/about" onClick={() => setMobileOpen(false)} className="block py-2">About</Link>
             </li>
             <li>
-              <Link href="/services" onClick={() => setMobileOpen(false)} className="block py-2">Services</Link>
+              <Link href="/service" onClick={() => setMobileOpen(false)} className="block py-2">Services</Link>
             </li>
             <li>
               <Link href="/blog" onClick={() => setMobileOpen(false)} className="block py-2">Blog</Link>
