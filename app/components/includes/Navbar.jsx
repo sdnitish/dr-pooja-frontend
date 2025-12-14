@@ -43,7 +43,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2">
               <FaPhoneAlt className="text-[#8a56f0] text-3xl" />
               <div>
-                <p className="text-[10px] text-gray-500 mb-0">Call Any Time</p>
+                <span className="block text-[10px] text-gray-500 mb-0">Call Any Time</span>
                 <Link href={'/'} className="font-semibold">+90 456 789 758</Link>
               </div>
             </div>
@@ -52,7 +52,7 @@ export default function Navbar() {
             <div className="flex items-center gap-2 border-l pl-6">
               <HiOutlineMailOpen className="text-[#8a56f0] text-4xl" />
               <div>
-                <p className="text-[10px] text-gray-500 mb-0">Email</p>
+                <span className="block text-[10px] text-gray-500 mb-0">Email</span>
                 <Link href={'/'} className="font-semibold">example@domain.com</Link>
               </div>
             </div>

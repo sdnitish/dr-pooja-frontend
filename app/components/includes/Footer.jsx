@@ -8,35 +8,67 @@ import { IoCall } from "react-icons/io5";
 const Footer = () => {
   const services = [
     {
-      title: "Service ",
+      title: "High-risk pregnancy care & delivery ",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "Gynecological Laparoscopic surgeries",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "Hysteroscopic Surgeries",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "Menopausal problems",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "PCOS management",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "Subfertility & Infertility",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "Cervical cancer screening and Vaccination",
+      slug: "service-name",
+    },
+     {
+      title: "Surgery for female genital prolapse ",
+      slug: "service-name",
+    },
+     {
+      title: "Abortion services",
       slug: "service-name",
     },
     {
-      title: "Service name",
+      title: "Robotic assisted  gynaecological surgeries",
+      slug: "service-name",
+    },
+    {
+      title: "Adolescence health problems",
+      slug: "service-name",
+    },
+    {
+      title: "Treatment of heavy and irregular periods",
+      slug: "service-name",
+    },
+    {
+      title: "Treatment of vaginal infections",
+      slug: "service-name",
+    },
+    {
+      title: "Preconceptional counselling",
+      slug: "service-name",
+    },
+    {
+      title: "Post delivery care and counselling",
+      slug: "service-name",
+    },
+    {
+      title: "Treatment of fibroids, ovarian cysts and heavy periods",
       slug: "service-name",
     },
   ]
@@ -52,13 +84,13 @@ const Footer = () => {
               <SocialIcon />
             </div>
           </div>
-          <div className="grid lg:grid-cols-3 gap-x-6 md:grid-cols-6 grid-cols-1 text-white">
-            <div>
+          <div className="grid lg:grid-cols-4 gap-x-6  grid-cols-1 w-full text-white">
+            <div className='col-span-2'>
               <span className='block text-2xl font-bold relative mb-6 pb-2'>Quick Links</span>
               <ul className='md:flex flex-wrap gap-x-4'>
                 {
                   services.map((item, index) => (
-                    <li className='md:w-[47%]' key={index}><Link className='flex items-center gap-1 text-[16px] py-[3px]' href={`/services/${item.slug}`}><HiChevronRight /> {item.title}</Link></li>
+                    <li className='md:w-[48%]' key={index}><Link className='flex items-center gap-1 text-[15px] py-[3px]' href={`/services/${item.slug}`}> {item.title}</Link></li>
                   ))
                 }
               </ul>
@@ -86,12 +118,16 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <span className='block text-2xl font-bold relative mb-6 pb-2'>Contact Us</span>
-              <p>Subscribe For Get Latest Updates</p>
-              <div className="bg-white rounded-full mt-6 w-full max-w-md overflow-hidden flex p-1">
-                <input className='w-full text-black p-3 outline-0' type="text" placeholder='Your Email*' name="" id="" />
-                <button className='bg-[#8a56f0] rounded-full px-5 '>Subscribe </button>
-              </div>
+              <span className='block text-2xl font-bold relative mb-6 pb-2'>We are Availablex</span>
+                <ul>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Monday :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Tuesday   :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Wednesday  :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Thursday  :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Friday  :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Saturday  :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
+                  <li className='flex items-center gap-2 text-[14px] py-[3px]'>Sunday  -<span className='text-[#]'>Closed</span></li>
+                </ul>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Clients from "./components/sections/Clients";
 import YouTube from "./components/sections/YouTube";
 import Blog from "./components/sections/Blog";
 import WhyChoose from "./components/sections/WhyChoose";
+import { ContactUs } from "./components/sections/ContactUs";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <WhyChoose />
       <YouTube />
+      <ContactUs />
       <Blog />
       <Clients />
     </>

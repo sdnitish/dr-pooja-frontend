@@ -10,7 +10,12 @@ img {
   max-width: 100%;
   transition: all 0.5s ease-in-out;
 }
-
+li{
+      font-family: 'Geist';
+}
+span{
+      font-family: 'Geist';
+}
 .img {
   overflow: hidden;
 }

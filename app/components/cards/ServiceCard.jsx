@@ -7,15 +7,15 @@ const ServiceCard = ({ item }) => {
 
     return (
         <>
-            <div className="border-2 bg-white bg-fixed border-[#8956f050] p-4 rounded-lg text-center m-4 mb-6 pb-9 relative hover:border-[#8956f0] hover:shadow-lg transition-all duration-300">
+            <div className="border-2 bg-white bg-fixed border-[#8956f050] p-4 rounded-lg  m-4 mb-6 pb-9 relative hover:border-[#8956f0] hover:shadow-lg transition-all duration-300">
                 <div className="img">
                     <img className='w-full rounded-xl' src={item.image} alt="About" />
                 </div>
                 <div className="px-6">
                     <Link href={`/`}>
-                        <span className='text-2xl font-semibold text-[#8956f0] block my-4'>{item.title}</span>
+                        <span className='text-[17px] md:text-[23px] font-semibold text-[#8956f0] block my-3'>{item.title}</span>
                     </Link>
-                    <div className="pera">
+                    <div className="pera line-clamp-4">
                         <p className='text-[#888c92]'>{item.pera}</p>
                     </div>
                     <div className="">
