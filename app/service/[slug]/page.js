@@ -1,15 +1,17 @@
-import React from 'react'
-import PageLayout from '@/app/PageLayout'
-import { BreadCrumb } from '@/app/components/sections/BreadCrumb'
-import { ContactUs } from '@/app/components/sections/ContactUs'
+import React from "react";
+import PageLayout from "@/app/PageLayout";
+import { ContactUs } from "@/app/components/sections/ContactUs";
+import ServiceDetail from "@/app/components/sections/ServiceDetail";
 
-const page = () => {
+const page = async ({ params }) => {
+  const { slug } = await params; // ✅ await params, not params.slug
+
   return (
     <PageLayout>
-      <BreadCrumb  />
+      <ServiceDetail slug={slug} />
       <ContactUs />
     </PageLayout>
-  )
-}
+  );
+};
 
-export default page
+export default page;

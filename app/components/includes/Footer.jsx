@@ -12,16 +12,16 @@ const Footer = ({ siteInfo , services }) => {
       <footer className="services bg-[url('/img/footer-bg.jpg')] bg-no-repeat bg-center bg-cover pt-10 md:pt-20">
         <div className="container">
           <div className="grid grid-cols-2 align-center  border-b-1 border-white md:pb-10 pb-3 mb-9">
-            <div className="">
-              <img className='lg:w-[200px] w-[150px]' src="/logo.png" alt="" />
-            </div>
+            <Link href={'/'} className="">
+              <img className='lg:w-[200px] w-[120px] ' src="/logo.png" alt="" />
+            </Link>
             <div className="foot_socal flex justify-end items-center gap-4">
                <SocialIcon siteInfo={siteInfo} />
             </div>
           </div>
           <div className="grid lg:grid-cols-4 lg:gap-x-6 gap-y-10  grid-cols-1 w-full text-white">
             <div className='lg:col-span-2'>
-              <span className='block text-2xl font-bold relative mb-6 pb-2'>Services</span>
+              <span className='block lg:text-2xl lg:font-bold text-xl relative mb-6 pb-2'>Services</span>
               <ul className='md:flex flex-wrap gap-x-4'>
                 {
                   services.map((item, index) => (
@@ -31,7 +31,7 @@ const Footer = ({ siteInfo , services }) => {
               </ul>
             </div>
             <div>
-              <span className='block text-2xl font-bold relative mb-6 pb-2'>Contact Us</span>
+              <span className='block lg:text-2xl lg:font-bold text-xl relative mb-6 pb-2'>Contact Us</span>
               <div className="flex items-center gap-2 my-4">
                 <FaLocationDot className="text-[#8a56f0] text-2xl" />
                 <div>
@@ -56,7 +56,7 @@ const Footer = ({ siteInfo , services }) => {
               </div>
             </div>
             <div>
-              <span className='block text-2xl font-bold relative mb-6 pb-2'>We are Available</span>
+              <span className='block lg:text-2xl lg:font-bold text-xl relative mb-6 pb-2'>We are Available</span>
                 <ul>
                   <li className='flex items-center gap-2 text-[14px] py-[3px]'>Monday :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>
                   <li className='flex items-center gap-2 text-[14px] py-[3px]'>Tuesday   :<span className='text-[#]'>9:00 AM - 5:00 PM</span></li>

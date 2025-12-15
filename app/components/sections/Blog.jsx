@@ -35,7 +35,7 @@ export default function Blog() {
                 <div className="container">
                     <div className='text-center'>
                         <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">Updates News</span>
-                        <span className="text-3xl md:text-4xl font-semibold mb-4 leading-[40px] block">Latest Posts</span>
+                        <span className="text-2xl md:text-4xl font-semibold mb-4 leading-[40px] block">Latest Posts</span>
                     </div>
                     <div className="">
                         {

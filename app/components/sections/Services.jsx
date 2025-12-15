@@ -13,7 +13,7 @@ const Services = ({ services }) => {
                 <div className="container">
                     <div className="text-center">
                         <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">Medical & General Care!</span>
-                        <p className="text-3xl md:text-4xl font-semibold mb-4">Our Services</p>
+                        <p className="text-2xl md:text-4xl font-semibold mb-4">Our Services</p>
                     </div>
                     <div className="">
                         {

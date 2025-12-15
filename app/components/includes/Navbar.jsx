@@ -78,8 +78,8 @@ export default function Navbar({ siteInfo , services}) {
               <Link href="/service">Service</Link>
               <ul className="absolute top-full left-0 bg-white text-gray-800 shadow-lg max-h-[68vh] overflow-y-auto scale-y-0 origin-top group-hover:scale-y-100 transition duration-300 z-10">
                 {services.map((service, index) => (
-                  <li key={index} className="px-4 py-2 hover:bg-gray-100 whitespace-nowrap border-b border-slate-200">
-                    <Link href={`/service/${service.slug}`}>{service.name}</Link>
+                  <li key={index} className=" hover:bg-gray-100 whitespace-nowrap border-b border-slate-200">
+                    <Link className="px-4 py-1 block" href={`/service/${service.slug}`}>{service.name}</Link>
                   </li>
                 ))}
               </ul>

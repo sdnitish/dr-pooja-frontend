@@ -36,7 +36,7 @@ function YouTube({ siteInfo }) {
                         <div className="md:pr-20">
                             <div>
                                 <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">Medical &amp; General Care!</span>
-                                <span className="text-3xl md:text-4xl font-semibold mb-4 leading-[40px] block">Surprise your body with extra care.</span>
+                                <span className="text-2xl md:text-4xl font-semibold mb-4 leading-[40px] block">Surprise your body with extra care.</span>
                             </div>
                             <p>Your body works hard for you every day, and it deserves extra care and attention. In the rush of daily life, we often ignore small signs of tiredness, stress, and discomfort. Surprising your body with extra care means listening to its needs and making simple, healthy choices. Getting enough sleep, eating nutritious food, staying hydrated, and taking short breaks can greatly improve your overall well-being. Regular physical activity, even light exercise like walking or stretching, helps keep your body active and stress-free. Mental health is equally important, so practicing relaxation techniques such as deep breathing or meditation can calm your mind. Regular health check-ups also play a key role in early detection and prevention of health issues. When you give your body the care it deserves, you feel more energetic, balanced, and confident. Small daily efforts can lead to long-term health and a happier, healthier life.</p>
                             <div className="relative pl-18 mt-6">

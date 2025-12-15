@@ -9,7 +9,7 @@ export default function WhyChoose() {
                         <div className="md:pr-20">
                             <div>
                                 <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">Comprehensive Women’s Health Care</span>
-                                <span className="text-3xl md:text-4xl font-semibold mb-4 leading-[40px] block">Why Choose Our Gynecology Services?</span>
+                                <span className="text-2xl md:text-4xl font-semibold mb-4 leading-[40px] block">Why Choose Our Gynecology Services?</span>
                             </div>
                             <p>We provide compassionate, evidence-based gynecological and obstetric care using modern medical technology. Our focus is on safety, comfort, and personalized treatment for women at every stage of life.</p>
                             <ul>
