@@ -6,7 +6,7 @@ import Blog from '../components/sections/Blog'
 const page = () => {
   return (
     <PageLayout>
-      <BreadCrumb  />
+      <BreadCrumb  name={'Blogs'} />
       <Blog />
     </PageLayout>
   )

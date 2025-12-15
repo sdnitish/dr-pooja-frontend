@@ -17,29 +17,43 @@ const Services = ({ services }) => {
                     </div>
                     <div className="">
                         {
-
                             <Swiper
-                                modules={[Navigation, Pagination, Autoplay, EffectFade]}
+                                modules={[Navigation, Pagination, Autoplay]}
                                 navigation={{
                                     prevEl: ".prev-btn",
                                     nextEl: ".next-btn",
                                 }}
-                                // effect="fade"
-                                fadeEffect={{ crossFade: true }}
                                 speed={1200}
-                                slidesPerView={3}
                                 pagination={{ clickable: true }}
-                                autoplay={{ delay: 5000 }}
+                                autoplay={{ delay: 5000, disableOnInteraction: false }}
                                 loop={true}
-                            >
+                                spaceBetween={20}
 
-                                { services.map((item, index) => (
-                                    <SwiperSlide>
-                                        <ServiceCard key={index} item={item} />
+                                breakpoints={{
+                                    0: {
+                                        slidesPerView: 1,
+                                    },
+                                    640: {
+                                        slidesPerView: 1,
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    },
+                                    1280: {
+                                        slidesPerView: 3,
+                                    },
+                                }}
+                            >
+                                {services.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <ServiceCard item={item} />
                                     </SwiperSlide>
                                 ))}
-
                             </Swiper>
+
                         }
                     </div>
                 </div>

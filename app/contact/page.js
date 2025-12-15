@@ -6,7 +6,7 @@ import { ContactUs } from '../components/sections/ContactUs'
 const page = () => {
   return (
     <PageLayout>
-      <BreadCrumb  />
+      <BreadCrumb name={"Contact"}  />
       <ContactUs />
     </PageLayout>
   )

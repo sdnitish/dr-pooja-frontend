@@ -6,7 +6,7 @@ import { BreadCrumb } from '../components/sections/BreadCrumb'
 const page = () => {
   return (
     <PageLayout>
-      <BreadCrumb  />
+      <BreadCrumb name={'Services'}  />
       <AllServices />
     </PageLayout>
   )
