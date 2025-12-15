@@ -8,8 +8,8 @@ export default function HomeAbout() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="relative">
                          <img src="/img/about.png" alt="About" />
-                         <div className="absolute right-0 bottom-[17%] bg-[#8a56f0] py-3 px-6 text-center rounded-2xl">
-                            <span className="block text-5xl md:text-6xl font-bold  text-white">20+</span>
+                         <div className="absolute right-0 bottom-[5%] md:bottom-[17%] bg-[#8a56f0] py-3 px-4 md:px-6 text-center rounded-2xl">
+                            <span className="block text-4xl md:text-6xl font-bold  text-white">20+</span>
                             <p className="text-white">Years of Experience</p>
                          </div>
                     </div>
