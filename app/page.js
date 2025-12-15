@@ -7,11 +7,13 @@ import YouTube from "./components/sections/YouTube";
 import Blog from "./components/sections/Blog";
 import WhyChoose from "./components/sections/WhyChoose";
 import { ContactUs } from "./components/sections/ContactUs";
+import { HomeCard } from "./components/sections/HomeCard";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <HomeCard/>
       <HomeAbout />
       <Services />
       <WhyChoose />
