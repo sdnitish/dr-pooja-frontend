@@ -298,27 +298,26 @@ export default function AdminSettingsPage() {
 
         {/* Contacts */}
         <div className="grid md:grid-cols-2 gap-4">
-          <label>
-            <span className="text-sm text-gray-600">Primary Email</span>
-            <input name="primaryEmail" value={form.primaryEmail} onChange={handleChange} className="mt-1 w-full border rounded px-3 py-2" />
-          </label>
-          <label>
-            <span className="text-sm text-gray-600">Primary Phone</span>
-            <input name="primaryPhone" value={form.primaryPhone} onChange={handleChange} className="mt-1 w-full border rounded px-3 py-2" />
-          </label>
+          {
+            ["primaryPhone", "secondaryPhone", "thirdPhone", "fourthPhone", "primaryEmail", "secondaryEmail", "thirdEmail", "fourthEmail"].map((field) => (
+              <label key={field}>
+                <span className="text-sm text-gray-600">{field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")}</span>
+                <input name={field} value={form[field]} onChange={handleChange} className="mt-1 w-full border rounded px-3 py-2" />
+              </label>
+            ))
+          }
         </div>
 
         {/* Addresses */}
         <div className="grid md:grid-cols-2 gap-4">
-          <label>
-            <span className="text-sm text-gray-600">Primary Address</span>
-            <input name="primaryAddress" value={form.primaryAddress} onChange={handleChange} className="mt-1 w-full border rounded px-3 py-2" />
-          </label>
-
-          <label>
-            <span className="text-sm text-gray-600">Secondary Address</span>
-            <input name="secondaryAddress" value={form.secondaryAddress} onChange={handleChange} className="mt-1 w-full border rounded px-3 py-2" />
-          </label>
+          {
+            ["primaryAddress", "secondaryAddress", "thirdAddress", "fourthAddress"].map((field) => (
+              <label key={field}>
+                <span className="text-sm text-gray-600">{field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")}</span>
+                <textarea name={field} value={form[field]} onChange={handleChange} className="mt-1 w-full border rounded px-3 py-2" />
+              </label>
+            ))
+          }
         </div>
 
         {/* Social links */}
@@ -351,7 +350,7 @@ export default function AdminSettingsPage() {
 
         {/* Jodit Editors */}
         <div className="col-span-2 block px-2 mb-4">
-          <label className="block mb-2 font-medium">About Company</label>
+          <label className="block mb-2 font-medium">About</label>
           <JoditEditor
             ref={editor}
             value={form.aboutCompany}

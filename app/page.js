@@ -12,6 +12,7 @@ import { getSiteInfo } from "@/lib/api/siteInfo.api";
 import { getServices } from "@/lib/api/services.api";
 import PageLayout from "./PageLayout";
 import { HomeCard } from "./components/sections/HomeCard";
+import { Testimonial } from "./components/sections/Testimonial";
 
 export const metadata = {
   title: "Dr. Pooja Mittal - Home",
@@ -30,6 +31,7 @@ export default async function Home() {
         <Services services={services?.data} />
         <WhyChoose />
         <YouTube siteInfo={siteInfo?.websiteInfo} />
+        <Testimonial />
         <ContactUs />
         <Blog />
         <Clients />

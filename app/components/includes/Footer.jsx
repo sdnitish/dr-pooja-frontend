@@ -15,7 +15,7 @@ const Footer = ({ siteInfo , services }) => {
             <Link href={'/'} className="">
               <img className='lg:w-[200px] w-[120px] ' src="/logo.png" alt="" />
             </Link>
-            <div className="foot_socal flex justify-end items-center gap-4">
+            <div className=" flex justify-end items-center gap-4">
                <SocialIcon siteInfo={siteInfo} />
             </div>
           </div>
