@@ -11,11 +11,11 @@ const ServiceDetail = async ({ slug }) => {
         <BreadCrumb name={services?.name} />
         <section className=' my-4 md:my-[80px]'>
             <div className="container">
-                <div className='grid md:grid-cols-2 gap-10'>
-                    <div className=''>
-                        <img className='w-full' src="/img/serv.jpeg" alt="About" />
+                <div className='flex flex-wrap'>
+                    <div className='lg:w-4/12 w-full lg:pr-3 mb-6 lg:mb-0'>
+                        <img className='w-full' src={services?.img} alt={services?.name} title={services?.name} />
                     </div>
-                    <div>
+                    <div className='lg:w-8/12 w-full lg:pl-3'>
                         <span className="text-base md:text-xl text-primary font-medium mb-2 block text-[#8a56f0]">Service Detail</span>
                         <h1 className="text-2xl md:text-3xl font-semibold mb-4">{services?.name}</h1>
                         <span className='block text-xl my-1'>FMAS ( Fellowship in Minimal Access Surgery)</span>

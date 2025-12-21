@@ -8,8 +8,8 @@ const ServiceCard = ({ item }) => {
     return (
         <>
             <div className="border-2 bg-white bg-fixed border-[#8956f050] p-4 rounded-lg  m-4 mb-6 pb-9 relative hover:border-[#8956f0] hover:shadow-lg transition-all duration-300">
-                <Link href={`/service/${item.slug}`} className="img">
-                    <img className='w-full rounded-xl' src={item.image??'/img/serv.jpeg'} alt="About" />
+                <Link href={`/service/${item.slug}`} className="img block">
+                    <img className='w-full rounded-xl' src={item.img??'/img/serv.jpeg'} alt={item.name} title={item.name}/>
                 </Link>
                 <div className="px-6">
                     <Link href={`/service/${item.slug}`}>

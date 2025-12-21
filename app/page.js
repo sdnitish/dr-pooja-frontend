@@ -11,6 +11,7 @@ import { ContactUs } from "./components/sections/ContactUs";
 import { getSiteInfo } from "@/lib/api/siteInfo.api";
 import { getServices } from "@/lib/api/services.api";
 import PageLayout from "./PageLayout";
+import { HomeCard } from "./components/sections/HomeCard";
 
 export const metadata = {
   title: "Dr. Pooja Mittal - Home",
@@ -24,6 +25,7 @@ export default async function Home() {
     <>
       <PageLayout>
         <Hero />
+        <HomeCard />
         <HomeAbout />
         <Services services={services?.data} />
         <WhyChoose />

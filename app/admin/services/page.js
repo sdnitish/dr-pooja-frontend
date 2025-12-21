@@ -344,8 +344,8 @@ export default function AdminServicesPage() {
               return (
                 <tr key={s._id} className="border-t">
                   <td className="p-3">
-                    {imgUrl ? (
-                      <img src={imgUrl} alt={s.name} className="w-20 h-12 object-cover rounded" />
+                    {s.img ? (
+                      <img src={s.img} alt={s.name} className="w-20 h-12 object-cover rounded" />
                     ) : (
                       <div className="w-20 h-12 bg-gray-100 flex items-center justify-center text-xs text-gray-500 rounded">No image</div>
                     )}
