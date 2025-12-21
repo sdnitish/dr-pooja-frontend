@@ -8,6 +8,7 @@ import Blog from "./components/sections/Blog";
 import WhyChoose from "./components/sections/WhyChoose";
 import { ContactUs } from "./components/sections/ContactUs";
 import { HomeCard } from "./components/sections/HomeCard";
+import { Testimonial } from "./components/sections/Testimonial";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <WhyChoose />
       <YouTube />
+      <Testimonial />
       <ContactUs />
       <Blog />
       <Clients />

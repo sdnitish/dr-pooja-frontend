@@ -73,6 +73,10 @@ span{
 .you_tube {
   transform: translate(-50%, -50%);
 }
+.greadCrumb{
+  background: #8A56F0;
+background: linear-gradient(90deg,rgba(138, 86, 240, 1) 0%, rgba(99, 34, 230, 0.71) 35%, rgba(0, 212, 255, 0) 100%);
+}
 
 .you_tube::after {
   content: "";
