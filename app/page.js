@@ -13,6 +13,7 @@ import { getServices } from "@/lib/api/services.api";
 import PageLayout from "./PageLayout";
 import { HomeCard } from "./components/sections/HomeCard";
 import { Testimonial } from "./components/sections/Testimonial";
+import { BlogDetails } from "./components/sections/BlogDetails";
 
 export const metadata = {
   title: "Dr. Pooja Mittal - Home",
@@ -34,6 +35,7 @@ export default async function Home() {
         <Testimonial />
         <ContactUs />
         <Blog />
+        <BlogDetails />
         <Clients />
       </PageLayout>
     </>
