@@ -9,6 +9,7 @@ import WhyChoose from "./components/sections/WhyChoose";
 import { ContactUs } from "./components/sections/ContactUs";
 import { HomeCard } from "./components/sections/HomeCard";
 import { Testimonial } from "./components/sections/Testimonial";
+import { BlogDetails } from "./components/sections/BlogDetails";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <ContactUs />
       <Blog />
       <Clients />
+      <BlogDetails />
     </>
   );
 }
